@@ -1,0 +1,3 @@
+[submodule "nvim/plugged/LuaSnip"]
+	path = nvim/plugged/LuaSnip
+	url = git@github.com:welqd/dotfiles.git
