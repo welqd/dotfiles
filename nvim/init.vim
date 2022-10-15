@@ -30,7 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'vim-airline/vim-airline'
