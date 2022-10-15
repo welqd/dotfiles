@@ -1,3 +1,6 @@
 [submodule "nvim/plugged/LuaSnip"]
 	path = nvim/plugged/LuaSnip
 	url = git@github.com:welqd/dotfiles.git
+[submodule "nvim/plugged/auto-pairs"]
+	path = nvim/plugged/auto-pairs
+	url = git@github.com:welqd/dotfiles.git
