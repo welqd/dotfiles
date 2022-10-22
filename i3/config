@@ -249,4 +249,4 @@ for_window [class="Vmware"] move to workspace $ws10 border pixel 0
 for_window [class="Galculator"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="winbox.exe"] floating enable
-for_window [class="Alacritty" title="^(?!Alacritty).*"] move to workspace $ws7 layout tabbed
+for_window [class="Alacritty" title="^(?!Alacritty|ncmpcpp).*"] move to workspace $ws7 layout tabbed
