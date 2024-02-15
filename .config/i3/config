@@ -1,0 +1,201 @@
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $yellow    #f9e2af
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
+# target                 title     bg     text    indicator  border
+client.focused           $mauve     $mauve $base   $mauve     $mauve
+client.focused_inactive  $surface0  $base  $text   $base      $base
+client.unfocused         $surface0  $base  $text   $base      $base
+client.urgent            $peach     $base  $peach  $overlay0  $peach
+client.placeholder       $overlay0  $base  $text   $overlay0  $overlay0
+client.background        $base
+
+
+set $mod Mod4
+font pango:JetBrains Mono 11
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+
+bindsym $mod+Return exec "wezterm"
+bindsym $mod+Shift+Return exec "alacritty"
+bindsym $mod+backslash exec "alacritty --class=float_term"
+
+bindsym $mod+Shift+c kill
+
+bindsym $mod+d exec "rofi -show drun -show-icons -drun-display-format {name} -modi drun"
+bindsym $mod+Tab exec "rofi -show window -show-icons -modi window"
+bindsym $mod+x exec "python ~/.config/i3/scratchpads.py"
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+period split h
+bindsym $mod+comma split v
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+bracketright layout tabbed
+bindsym $mod+bracketleft  layout toggle split
+
+bindsym $mod+Shift+z floating toggle
+bindsym $mod+z focus mode_toggle
+
+set $ws1 "1"
+set $ws2 "2" 
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+set $left_mon DisplayPort-1
+set $right_mon DisplayPort-2
+set $tv HDMI-A-0
+
+workspace 1 output $left_mon
+workspace 2 output $left_mon
+workspace 3 output $left_mon
+workspace 4 output $left_mon
+workspace 5 output $left_mon
+workspace 6 output $right_mon
+workspace 7 output $right_mon
+workspace 8 output $right_mon
+workspace 9 output $right_mon
+workspace 10 output $right_mon
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2 
+bindsym $mod+3 workspace number $ws3; layout tabbed
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+q workspace number $ws6
+bindsym $mod+w workspace number $ws7
+bindsym $mod+e workspace number $ws8
+bindsym $mod+r workspace number $ws9
+bindsym $mod+t workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+q move container to workspace number $ws6
+bindsym $mod+Shift+w move container to workspace number $ws7
+bindsym $mod+Shift+e move container to workspace number $ws8
+bindsym $mod+Shift+r move container to workspace number $ws9
+bindsym $mod+Shift+t move container to workspace number $ws10
+
+
+bindsym $mod+Shift+0 restart
+bindsym $mod+Shift+minus exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+Left resize shrink width 3 px or 3 ppt
+bindsym $mod+Shift+Right resize grow width 3 px or 3 ppt
+bindsym $mod+Shift+Up resize grow height 3 px or 3 ppt
+bindsym $mod+Shift+Down resize shrink height 3 px or 3 ppt
+
+bindsym Print exec flameshot gui
+
+gaps inner 10
+gaps outer 0
+smart_gaps off
+
+default_border pixel 1
+default_floating_border pixel 2
+
+bindsym $mod+Shift+x move scratchpad
+
+exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf &
+exec_always --no-startup-id feh --bg-fill $HOME/Data/Pictures/Wallpapers/ponyo.jpg
+exec_always --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle' -option 'caps:swapescape'"
+exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 165 --primary --output DisplayPort-1 --mode 1920x1080 --rate 165 --left-of DisplayPort-2
+exec --no-startup-id "echo $(cat ~/.config/secrets/keepassxc) | keepassxc --pw-stdin ~/Data/Documents/welqd.kdbx"
+exec --no-startup-id "xset r rate 300 50"
+exec --no-startup-id /usr/bin/lxpolkit &
+exec --no-startup-id dunst
+exec --no-startup-id telegram-desktop
+
+for_window [class="firefox"] move to workspace $ws1 border pixel 0
+for_window [class="firefox" title="Library"] floating enable border pixel 2
+for_window [class="floorp"] move to workspace $ws1 border pixel 0
+for_window [class="floorp" title="Library"] floating enable border pixel 2
+
+for_window [class="calibre"] move to workspace $ws2 border pixel 0
+
+for_window [class="TelegramDesktop"] move to workspace $ws3 border pixel 0
+for_window [class="discord"] move to workspace $ws3 border pixel 0
+
+for_window [class="obs"] move to workspace $ws4 border pixel 0
+
+for_window [class="thunderbird"] move to workspace $ws5 border pixel 0
+for_window [class="qBittorrent"] move to workspace $ws5 border pixel 0
+
+for_window [class="org.wezfurlong.wezterm"] move to workspace $ws6
+
+for_window [class="steam"] move to workspace $ws8 border pixel 0 
+for_window [class="steam" title="^(?!Steam)"] move to workspace $ws8 floating enable
+for_window [class="steam" title="Steam - News"] move to workspace $ws8 floating enable
+for_window [class="steam" title="Friends List"] move to workspace $ws8 floating enable
+
+for_window [class="dota2"] move to workspace $ws9 border pixel 0
+for_window [class="cs2"] move to workspace $ws9 border pixel 0
+for_window [class="CompanyOfHeroes2"] move to workspace $ws9 border pixel 0
+for_window [class="Stardew Valley"] move to workspace $ws9 border pixel 0
+for_window [class="valheim.x86_64"] move to workspace $ws9 border pixel 0
+for_window [class="steam_app_*"] move to workspace $ws9 border pixel 0 
+
+for_window [class="Vmware"] move to workspace $ws10 border pixel 0
+for_window [class="Virt-manager"] move to workspace $ws10 border pixel 0
+
+for_window [class="Galculator"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="winbox.exe"] floating enable
+for_window [class="Thunar"] floating enable, resize set 1024 768
+for_window [class="KeePassXC"] floating enable, resize set 1024 768
+for_window [class="Anki"] floating enable, resize set 1024 768
+for_window [class="float_term"] floating enable, resize set 800 600
+for_window [class="Virt-manager"] floating enable, resize set 640 480
+for_window [title="KeePassXC - Browser Access Request"] floating enable, resize set 600 100
