@@ -1,4 +1,4 @@
-include catppuccin-mocha
+include catppuccin-frappe
 
 set selection-clipboard clipboard
 set adjust-open "best-fit"

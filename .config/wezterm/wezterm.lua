@@ -15,13 +15,13 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
 -- Color scheme
-config.color_scheme = "catppuccin-mocha"
+config.color_scheme = "catppuccin-frappe"
 
 -- Focus follows mouse
 config.pane_focus_follows_mouse = true
 
 -- Opacity and padding
-config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.95
 config.window_padding = {
 	top = 14,
 	right = 5,
@@ -38,6 +38,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.status_update_interval = 1000
 config.tab_max_width = 32
 config.prefer_to_spawn_tabs = true
+config.hide_tab_bar_if_only_one_tab = false
 
 -- Inactive Pane appearance
 config.inactive_pane_hsb = {
@@ -45,29 +46,37 @@ config.inactive_pane_hsb = {
 	brightness = 0.75,
 }
 
+-- Color variables
+local frappe_mauve = "#ca9ee6"
+local frappe_base = "#303446"
+local frappe_overlay0 = "#737994"
+local frappe_surface1 = "#51576d"
+local frappe_text = "#c6d0f5"
+local frappe_base_a = "rgb(48, 52, 70, 0.95)"
+local frappe_mantle_a = "rgb(41, 44, 60, 0.95)"
 -- Colors
 config.colors = {
-	split = "#45475a",
-	cursor_fg = "#1e1e2e",
-	cursor_bg = "#cba6f7",
+	split = frappe_surface1,
+	cursor_fg = frappe_base,
+	cursor_bg = frappe_mauve,
 	tab_bar = {
 		-- Remove if fancy is true
-		background = "rgba(30, 30, 46, 0.95)",
+		background = frappe_mantle_a,
 		active_tab = {
-			bg_color = "rgba(30, 30, 46, 0.95)",
-			fg_color = "#cba6f7",
+			bg_color = frappe_base_a,
+			fg_color = frappe_mauve,
 			intensity = "Bold",
 		},
 		inactive_tab = {
-			bg_color = "rgba(30, 30, 46, 0.95)",
-			fg_color = "#cdd6f4",
+			bg_color = frappe_mantle_a,
+			fg_color = frappe_overlay0,
 			intensity = "Bold",
 		},
 		inactive_tab_hover = {
-			bg_color = "rgba(30, 30, 46, 0.95)",
-			fg_color = "#b5bfe2",
+			bg_color = frappe_mantle_a,
+			fg_color = frappe_text,
 			intensity = "Bold",
-			italic = true,
+			-- italic = true,
 		},
 		-- Uncomment when fancy is true
 		-- inactive_tab_edge = 'rgba(48, 52, 70, 0.95)',

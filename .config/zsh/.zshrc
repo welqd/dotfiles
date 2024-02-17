@@ -77,6 +77,22 @@ export TASKDDATA=/var/lib/taskd
 export TERM='xterm-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+# Home cleanup
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+export TS3_CONFIG_DIR="$XDG_CONFIG_HOME/ts3client"
+export W3M_DIR="$XDG_DATA_HOME/w3m"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

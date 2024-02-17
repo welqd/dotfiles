@@ -15,4 +15,4 @@ configuration{
     font: "JetBrains Mono 12";
 }
 
-@theme "catppuccin-mocha"
+@theme "catppuccin-frappe"
