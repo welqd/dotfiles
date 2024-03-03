@@ -6,11 +6,11 @@ return {
 		opts = {
 			direction = "float",
 			open_mapping = [[<C-\>]],
-      float_opts = {
-        border = "curved",
-        width = 120,
-        height = 25,
-      }
+			float_opts = {
+				border = "curved",
+				width = 120,
+				height = 25,
+			},
 		},
 	},
 }

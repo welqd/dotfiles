@@ -8,6 +8,7 @@ return {
 			keymaps = {
 				q = "actions.close",
 				Q = "actions.close",
+				["<Esc>"] = { callback = "actions.close", mode = "n" },
 			},
 			float = {
 				max_width = 70,
