@@ -40,33 +40,61 @@ return {
 					},
 				},
 			})
-			local opts = { noremap = true, silent = true }
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+			vim.api.nvim_create_autocmd("LspAttach", {
+				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+				callback = function(ev)
+					-- Enable completion triggered by <c-x><c-o>
+					vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+					-- Buffer local mappings.
+					-- See `:help vim.lsp.*` for documentation on any of the below functions
+					local opts = { buffer = ev.buf }
+					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+					vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+					vim.keymap.set("n", "<leader>gf", function()
+						vim.lsp.buf.format({ async = true })
+					end, opts)
+				end,
+			})
+			require("lspconfig").efm.setup({
+				init_options = { documentFormatting = true },
+				settings = {
+					rootMarkers = { ".git/" },
+					languages = {
+						lua = {
+							require("efmls-configs.linters.luacheck"),
+							require("efmls-configs.formatters.stylua"),
+						},
+						markdown = {
+							require("efmls-configs.linters.markdownlint"),
+							require("efmls-configs.formatters.mdformat"),
+						},
+						html = {
+							require("efmls-configs.linters.djlint"),
+							require("efmls-configs.formatters.prettier"),
+						},
+						css = {
+							require("efmls-configs.linters.stylelint"),
+							require("efmls-configs.formatters.prettier"),
+						},
+						go = {
+							require("efmls-configs.linters.go_revive"),
+							require("efmls-configs.formatters.gofumpt"),
+						},
+						python = {
+							require("efmls-configs.linters.flake8"),
+							require("efmls-configs.formatters.black"),
+							require("efmls-configs.formatters.isort"),
+						},
+					},
+				},
+			})
 		end,
 	},
-	-- 	{
-	-- 		"jay-babu/mason-null-ls.nvim",
-	-- 		event = { "BufReadPre", "BufNewFile" },
-	-- 		config = function()
-	-- 			require("mason").setup()
-	-- 			require("mason-null-ls").setup({
-	-- 				ensure_installed = {
-	-- 					"prettier",
-	-- 					"djlint",
-	-- 					"markdownlint",
-	-- 					"stylua",
-	-- 					"shfmt",
-	-- 					-- "black",
-	-- 					-- "isort",
-	-- 					-- "flake8",
-	-- 					"gofumpt",
-	-- 					"revive",
-	-- 					"stylelint",
-	-- 				},
-	-- 			})
-	-- 		end,
-	-- 	},
 }
