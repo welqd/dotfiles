@@ -1,19 +1,34 @@
+-- return {
+-- 	"catppuccin/nvim",
+-- 	name = "catppuccin",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("catppuccin").setup({
+-- 			flavour = "frappe",
+-- 			background = {
+-- 				light = "latte",
+-- 				dark = "frappe",
+-- 			},
+-- 			transparent_background = true,
+-- 			styles = {
+-- 				conditionals = {},
+-- 			},
+-- 		})
+-- 		vim.cmd.colorscheme("catppuccin")
+-- 	end,
+-- }
+
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
+	"sainnhe/gruvbox-material",
 	priority = 1000,
 	config = function()
-		require("catppuccin").setup({
-			flavour = "frappe",
-			background = {
-				light = "latte",
-				dark = "frappe",
-			},
-			transparent_background = true,
-			styles = {
-				conditionals = {},
-			},
-		})
-		vim.cmd.colorscheme("catppuccin")
+		vim.g.gruvbox_material_foreground = "material"
+        vim.g.gruvbox_material_background = "medium"
+        vim.g.gruvbox_material_float_style = "dim"
+        vim.g.gruvbox_material_diagnostic_text_highlight = 1
+		vim.g.gruvbox_material_enable_italic = 0
+		vim.g.gruvbox_material_better_performance = 1
+		-- vim.g.gruvbox_material_transparent_background = 1
+		vim.cmd.colorscheme("gruvbox-material")
 	end,
 }

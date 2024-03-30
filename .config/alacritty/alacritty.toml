@@ -1,0 +1,20 @@
+import = ["/home/welqd/.config/alacritty/gruvbox-material-medium.toml"]
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[window]
+decorations = "full"
+# opacity = 0.95

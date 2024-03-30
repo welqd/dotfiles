@@ -1,38 +1,55 @@
-set $rosewater #f2d5cf
-set $flamingo  #eebebe
-set $pink      #f4b8e4
-set $mauve     #ca9ee6
-set $red       #e78284
-set $maroon    #ea999c
-set $peach     #ef9f76
-set $yellow    #e5c890
-set $green     #a6d189
-set $teal      #81c8be
-set $sky       #99d1db
-set $sapphire  #85c1dc
-set $blue      #8caaee
-set $lavender  #babbf1
-set $text      #c6d0f5
-set $subtext1  #b5bfe2
-set $subtext0  #a5adce
-set $overlay2  #949cbb
-set $overlay1  #838ba7
-set $overlay0  #737994
-set $surface2  #626880
-set $surface1  #51576d
-set $surface0  #414559
-set $base      #303446
-set $mantle    #292c3c
-set $crust     #232634
+# set $rosewater #f2d5cf
+# set $flamingo  #eebebe
+# set $pink      #f4b8e4
+# set $mauve     #ca9ee6
+# set $red       #e78284
+# set $maroon    #ea999c
+# set $peach     #ef9f76
+# set $yellow    #e5c890
+# set $green     #a6d189
+# set $teal      #81c8be
+# set $sky       #99d1db
+# set $sapphire  #85c1dc
+# set $blue      #8caaee
+# set $lavender  #babbf1
+# set $text      #c6d0f5
+# set $subtext1  #b5bfe2
+# set $subtext0  #a5adce
+# set $overlay2  #949cbb
+# set $overlay1  #838ba7
+# set $overlay0  #737994
+# set $surface2  #626880
+# set $surface1  #51576d
+# set $surface0  #414559
+# set $base      #303446
+# set $mantle    #292c3c
+# set $crust     #232634
+#
+# # target                 title     bg     text    indicator  border
+# client.focused           $mauve     $mauve $base   $mauve     $mauve
+# client.focused_inactive  $surface0  $base  $text   $base      $base
+# client.unfocused         $surface0  $base  $text   $base      $base
+# client.urgent            $peach     $base  $peach  $overlay0  $peach
+# client.placeholder       $overlay0  $base  $text   $overlay0  $overlay0
+# client.background        $base
+
+set $bg       #282828
+set $fg       #d4be98
+set $red      #ea6962
+set $orange   #e78a4e
+set $green    #a9b665
+set $blue     #7daea3
+set $purple   #d3869b
+set $aqua     #89b482
+set $darkgray #282828
 
 # target                 title     bg     text    indicator  border
-client.focused           $mauve     $mauve $base   $mauve     $mauve
-client.focused_inactive  $surface0  $base  $text   $base      $base
-client.unfocused         $surface0  $base  $text   $base      $base
-client.urgent            $peach     $base  $peach  $overlay0  $peach
-client.placeholder       $overlay0  $base  $text   $overlay0  $overlay0
-client.background        $base
-
+client.focused           $blue     $blue $bg   $blue     $blue
+client.focused_inactive  $darkgray  $bg  $fg   $bg      $bg
+client.unfocused         $darkgray  $bg  $fg   $bg      $bg
+client.urgent            $peach     $bg  $orange  $darkgray  $orange
+client.placeholder       $darkgray  $bg  $fg   $darkgray  $darkgray
+client.background        $bg
 
 set $mod Mod4
 font pango:JetBrains Mono 11
@@ -137,7 +154,7 @@ bindsym $mod+Shift+Down resize shrink height 3 px or 3 ppt
 
 bindsym Print exec flameshot gui
 
-gaps inner 10
+gaps inner 20
 gaps outer 0
 smart_gaps off
 
@@ -148,7 +165,7 @@ bindsym $mod+Shift+x move scratchpad
 
 exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf &
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/Data/Pictures/Wallpapers/ponyo.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/Data/Pictures/Wallpapers/gb_anime.png
 exec_always --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle' -option 'caps:swapescape'"
 exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 165 --primary --output DisplayPort-1 --mode 1920x1080 --rate 165 --left-of DisplayPort-2
 exec --no-startup-id "echo $(cat ~/.config/secrets/keepassxc) | keepassxc --pw-stdin ~/Data/Documents/welqd.kdbx"

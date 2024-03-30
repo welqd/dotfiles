@@ -1,7 +1,5 @@
-include catppuccin-frappe
+include gruvbox-material-dark
 
 set selection-clipboard clipboard
 set adjust-open "best-fit"
 set font "JetBrains Mono 15"
-# "Night" mode
-set recolor true

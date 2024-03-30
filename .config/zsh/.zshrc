@@ -12,6 +12,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "romkatv/powerlevel10k"
 plug "jeffreytse/zsh-vi-mode"
 
+
 # Title
 case "$TERM" in
     xterm*|rxvt*)

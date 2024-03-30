@@ -9,13 +9,29 @@ if wezterm.config_builder then
 end
 
 -- Fonts
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 15
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
 -- Color scheme
-config.color_scheme = "catppuccin-frappe"
+-- config.color_scheme = "catppuccin-frappe"
+
+config.color_scheme = "gruvbox_material_dark_medium"
+config.color_schemes = {
+	["gruvbox_material_dark_medium"] = {
+		foreground = "#D4BE98",
+		background = "#282828",
+		cursor_bg = "#D4BE98",
+		cursor_border = "#D4BE98",
+		cursor_fg = "#282828",
+		selection_bg = "#D4BE98",
+		selection_fg = "#45403D",
+
+		ansi = { "#282828", "#EA6962", "#A9B665", "#D8A657", "#7DAEA3", "#D3869B", "#89B482", "#D4BE98" },
+		brights = { "#45403D", "#EA6962", "#A9B665", "#D8A657", "#7DAEA3", "#D3869B", "#89B482", "#D4BE98" },
+	},
+}
 
 -- Focus follows mouse
 config.pane_focus_follows_mouse = true
@@ -23,7 +39,7 @@ config.pane_focus_follows_mouse = true
 -- Opacity and padding
 -- config.window_background_opacity = 0.95
 config.window_padding = {
-	top = 14,
+	top = 15,
 	right = 5,
 	bottom = 0,
 	left = 5,
@@ -47,36 +63,45 @@ config.inactive_pane_hsb = {
 }
 
 -- Color variables
-local frappe_mauve = "#ca9ee6"
-local frappe_base = "#303446"
-local frappe_overlay0 = "#737994"
-local frappe_surface1 = "#51576d"
-local frappe_text = "#c6d0f5"
-local frappe_base_a = "rgb(48, 52, 70, 0.95)"
-local frappe_mantle_a = "rgb(41, 44, 60, 0.95)"
+-- local frappe_mauve = "#ca9ee6"
+-- local frappe_base = "#303446"
+-- local frappe_overlay0 = "#737994"
+-- local frappe_surface1 = "#51576d"
+-- local frappe_text = "#c6d0f5"
+-- local frappe_base_a = "rgb(48, 52, 70, 0.95)"
+-- local frappe_mantle_a = "rgb(41, 44, 60, 0.95)"
+local gb_bg = "#282828"
+local gb_bg2 = "#222222"
+local gb_fg = "#d4be98"
+local gb_blue = "#7daea3"
+local gb_black = "#3c3836"
+local gb_grey0 = "#7c6f64"
 -- Colors
 config.colors = {
-	split = frappe_surface1,
-	cursor_fg = frappe_base,
-	cursor_bg = frappe_mauve,
+	split = gb_blue,
+	-- cursor_fg = frappe_base,
+	cursor_fg = gb_bg,
+	-- cursor_bg = frappe_mauve,
+	cursor_bg = gb_fg,
 	tab_bar = {
 		-- Remove if fancy is true
-		background = frappe_mantle_a,
+		-- background = frappe_mantle_a,
+		background = gb_bg2,
 		active_tab = {
-			bg_color = frappe_base_a,
-			fg_color = frappe_mauve,
+			bg_color = gb_black,
+			fg_color = gb_fg,
 			intensity = "Bold",
 		},
 		inactive_tab = {
-			bg_color = frappe_mantle_a,
-			fg_color = frappe_overlay0,
+			bg_color = gb_bg2,
+			fg_color = gb_grey0,
 			intensity = "Bold",
 		},
 		inactive_tab_hover = {
-			bg_color = frappe_mantle_a,
-			fg_color = frappe_text,
+			bg_color = gb_bg2,
+			fg_color = gb_grey0,
 			intensity = "Bold",
-			-- italic = true,
+			italic = true,
 		},
 		-- Uncomment when fancy is true
 		-- inactive_tab_edge = 'rgba(48, 52, 70, 0.95)',
@@ -99,6 +124,7 @@ config.keys = {
 	{ key = "3", mods = "ALT", action = act.ActivateTab(2) },
 	{ key = "4", mods = "ALT", action = act.ActivateTab(3) },
 	{ key = "5", mods = "ALT", action = act.ActivateTab(4) },
+	{ key = "6", mods = "ALT", action = act.ActivateTab(5) },
 	{ key = "h", mods = "ALT", action = act.ActivateTabRelative(-1) },
 	{ key = "l", mods = "ALT", action = act.ActivateTabRelative(1) },
 	-- Panes

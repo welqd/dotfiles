@@ -12,7 +12,7 @@ configuration{
     display-window: "   Window";
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
-    font: "JetBrains Mono 12";
+    font: "JetBrains Mono 14";
 }
 
-@theme "catppuccin-frappe"
+@theme "gruvbox-material"
