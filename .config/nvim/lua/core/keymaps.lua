@@ -33,10 +33,17 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 -- Better paste
 keymap("x", "p", [["_dP]], opts)
 -- Copy to system clipboard
-keymap({"n", "v"}, "<leader>y", '"+y', opts)
+keymap({ "n", "v" }, "<leader>y", '"+y', opts)
 keymap("n", "<leader>Y", '"+Y', opts)
 -- Delete without yanking
-keymap({"n", "v"}, "<leader>d", '"_d', opts)
+keymap({ "n", "v" }, "<leader>d", '"_d', opts)
+-- Do not yank empty line
+vim.keymap.set("n", "dd", function()
+	if vim.api.nvim_get_current_line():find("^%s*$") then
+		return '"_dd'
+	end
+	return "dd"
+end, { expr = true })
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)

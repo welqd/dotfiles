@@ -1,3 +1,4 @@
+---@diagnostic disable: 112
 vim.opt.backup = false -- creates a backup file
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
@@ -35,13 +36,14 @@ vim.opt.termguicolors = true
 vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"
 
--- vim.opt.spell = true -- enable spellcheck
--- vim.opt.spelllang = { 'en_us', 'ru_yo' } -- an english and russian dictionaries
+vim.opt.spell = true -- enable spellcheck
+vim.opt.spelllang = { "en_us", "ru_yo" } -- an english and russian dictionaries
+vim.opt.spellfile = { "/home/welqd/.config/nvim/spell/en.utf-8.add", "/home/welqd/.config/nvim/spell/ru.utf-8.add" }
 
 -- highlight yanked text for 200ms using the "Visual" highlight group
-vim.cmd[[
+vim.cmd([[
 augroup highlight_yank
 autocmd!
 au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=150})
 augroup END
-]]
+]])
