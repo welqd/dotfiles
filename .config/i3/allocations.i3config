@@ -1,0 +1,33 @@
+for_window [class="firefox"] move to workspace $ws1
+for_window [class="firefox" title="Library"] floating enable
+for_window [class="floorp"] move to workspace $ws1
+for_window [class="floorp" title="Library"] floating enable
+for_window [class="calibre"] move to workspace $ws2
+for_window [class="TelegramDesktop"] move to workspace $ws3
+for_window [class="discord"] move to workspace $ws3
+for_window [class="obs"] move to workspace $ws4
+for_window [class="thunderbird"] move to workspace $ws5
+for_window [class="qBittorrent"] move to workspace $ws5
+for_window [class="org.wezfurlong.wezterm"] move to workspace $ws6
+for_window [class="steam"] move to workspace $ws8
+for_window [class="steam" title="^(?!Steam)"] move to workspace $ws8 floating enable
+for_window [class="steam" title="Steam - News"] move to workspace $ws8 floating enable
+for_window [class="steam" title="Friends List"] move to workspace $ws8 floating enable
+for_window [class="dota2"] move to workspace $ws9 border pixel 0
+for_window [class="cs2"] move to workspace $ws9 border pixel 0
+for_window [class="CompanyOfHeroes2"] move to workspace $ws9 border pixel 0
+for_window [class="Stardew Valley"] move to workspace $ws9 border pixel 0
+for_window [class="valheim.x86_64"] move to workspace $ws9 border pixel 0
+for_window [class="steam_app_*"] move to workspace $ws9 border pixel 0 
+for_window [class="Vmware"] move to workspace $ws10
+for_window [class="Virt-manager"] move to workspace $ws10
+for_window [class="Galculator"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="winbox.exe"] floating enable
+for_window [class="Thunar"] floating enable, resize set 1024 768
+for_window [class="KeePassXC"] floating enable, resize set 1024 768
+for_window [class="Anki"] floating enable, resize set 1024 768
+for_window [class="float_term"] floating enable, resize set 800 600
+for_window [title="Virtual Machine Manager"] floating enable, resize set 640 480
+for_window [title="KeePassXC - Browser Access Request"] floating enable, resize set 600 100

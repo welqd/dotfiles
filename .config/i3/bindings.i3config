@@ -1,0 +1,69 @@
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym $mod+Return exec "wezterm"
+bindsym $mod+Shift+Return exec "alacritty"
+bindsym $mod+backslash exec "alacritty --class=float_term"
+
+bindsym $mod+Shift+c kill
+
+bindsym $mod+d exec "rofi -show drun -show-icons -drun-display-format {name} -modi drun"
+bindsym $mod+Tab exec "rofi -show window -show-icons -modi window"
+bindsym $mod+x exec "python ~/.config/i3/scratchpads.py"
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+period split h
+bindsym $mod+comma split v
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+bracketright layout tabbed
+bindsym $mod+bracketleft  layout toggle split
+
+bindsym $mod+Shift+z floating toggle
+bindsym $mod+z focus mode_toggle
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2 
+bindsym $mod+3 workspace number $ws3; layout tabbed
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+q workspace number $ws6
+bindsym $mod+w workspace number $ws7
+bindsym $mod+e workspace number $ws8
+bindsym $mod+r workspace number $ws9
+bindsym $mod+t workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+q move container to workspace number $ws6
+bindsym $mod+Shift+w move container to workspace number $ws7
+bindsym $mod+Shift+e move container to workspace number $ws8
+bindsym $mod+Shift+r move container to workspace number $ws9
+bindsym $mod+Shift+t move container to workspace number $ws10
+
+bindsym $mod+Shift+0 restart
+bindsym $mod+Shift+minus exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+Left resize shrink width 3 px or 3 ppt
+bindsym $mod+Shift+Right resize grow width 3 px or 3 ppt
+bindsym $mod+Shift+Up resize grow height 3 px or 3 ppt
+bindsym $mod+Shift+Down resize shrink height 3 px or 3 ppt
+
+bindsym $mod+Print exec flameshot gui
+
+bindsym $mod+Shift+x move scratchpad

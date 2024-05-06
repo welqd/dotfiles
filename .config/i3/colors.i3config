@@ -1,0 +1,17 @@
+set $bg       #282828
+set $fg       #d4be98
+set $red      #ea6962
+set $orange   #e78a4e
+set $green    #a9b665
+set $blue     #7daea3
+set $purple   #d3869b
+set $aqua     #89b482
+set $darkgray #282828
+
+# target                 title     bg     text    indicator  border
+client.focused           $blue     $blue $bg   $blue     $blue
+client.focused_inactive  $darkgray  $bg  $fg   $bg      $bg
+client.unfocused         $darkgray  $bg  $fg   $bg      $bg
+client.urgent            $peach     $bg  $orange  $darkgray  $orange
+client.placeholder       $darkgray  $bg  $fg   $darkgray  $darkgray
+client.background        $bg

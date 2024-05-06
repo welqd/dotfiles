@@ -1,0 +1,12 @@
+exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf &
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/Data/Pictures/Wallpapers/gb_anime.png
+exec_always --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle' -option 'caps:swapescape'"
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xrandr --output DisplayPort-2 --mode 1920x1080 --rate 165 --primary --output DisplayPort-1 --mode 1920x1080 --rate 165 --left-of DisplayPort-2
+exec --no-startup-id "echo $(cat ~/.config/secrets/keepassxc) | keepassxc --pw-stdin ~/Data/Documents/welqd.kdbx"
+exec --no-startup-id "xset r rate 300 50"
+exec --no-startup-id /usr/bin/lxpolkit &
+exec --no-startup-id dunst
+exec --no-startup-id telegram-desktop
+exec --no-startup-id nm-applet

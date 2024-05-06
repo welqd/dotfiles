@@ -1,4 +1,3 @@
----@diagnostic disable: 112
 vim.opt.backup = false -- creates a backup file
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
@@ -47,3 +46,14 @@ autocmd!
 au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=150})
 augroup END
 ]])
+
+vim.filetype.add({
+	-- Detect and assign filetype based on the extension of the filename
+	extension = {
+		i3config = "i3config",
+	},
+	-- Detect and apply filetypes based on the entire filename
+	filename = {
+		["i3config"] = "i3config",
+	},
+})
