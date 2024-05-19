@@ -3,7 +3,7 @@ include ~/.config/i3/colors.i3config
 include ~/.config/i3/startups.i3config
 include ~/.config/i3/allocations.i3config
 
-font pango:JetBrains Mono 11
+font pango:FiraCode Nerd Font Mono 11
 set $mod Mod4
 
 floating_modifier $mod

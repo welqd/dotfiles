@@ -2,4 +2,4 @@ include gruvbox-material-dark
 
 set selection-clipboard clipboard
 set adjust-open "best-fit"
-set font "JetBrains Mono 15"
+set font "FiraCode Nerd Font Mono 15"

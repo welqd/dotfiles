@@ -9,13 +9,12 @@ if wezterm.config_builder then
 end
 
 -- Fonts
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular" })
 config.font_size = 15
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
 -- Color scheme
--- config.color_scheme = "catppuccin-frappe"
 
 config.color_scheme = "gruvbox_material_dark_medium"
 config.color_schemes = {
@@ -37,7 +36,7 @@ config.color_schemes = {
 config.pane_focus_follows_mouse = true
 
 -- Opacity and padding
--- config.window_background_opacity = 0.95
+config.window_background_opacity = 0.95
 config.window_padding = {
 	top = 15,
 	right = 5,

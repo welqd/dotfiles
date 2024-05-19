@@ -47,6 +47,7 @@ au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=1
 augroup END
 ]])
 
+-- Filetypes
 vim.filetype.add({
 	-- Detect and assign filetype based on the extension of the filename
 	extension = {

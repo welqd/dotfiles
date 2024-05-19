@@ -7,9 +7,8 @@
 -- 			flavour = "frappe",
 -- 			background = {
 -- 				light = "latte",
--- 				dark = "frappe",
 -- 			},
--- 			transparent_background = true,
+-- 			transparent_background = false,
 -- 			styles = {
 -- 				conditionals = {},
 -- 			},
@@ -28,7 +27,7 @@ return {
         vim.g.gruvbox_material_diagnostic_text_highlight = 1
 		vim.g.gruvbox_material_enable_italic = 0
 		vim.g.gruvbox_material_better_performance = 1
-		-- vim.g.gruvbox_material_transparent_background = 1
+		vim.g.gruvbox_material_transparent_background = 1
 		vim.cmd.colorscheme("gruvbox-material")
 	end,
 }
