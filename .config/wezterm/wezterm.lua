@@ -10,7 +10,7 @@ end
 
 -- Fonts
 config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular" })
-config.font_size = 15
+config.font_size = 14
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
