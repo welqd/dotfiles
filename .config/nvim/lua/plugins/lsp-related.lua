@@ -16,7 +16,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "html", "marksman", "pyright", "ruff_lsp", "bashls", "cssls", "gopls" },
+				ensure_installed = { "lua_ls", "html", "marksman", "ruff_lsp", "bashls", "cssls", "gopls", "clangd" },
 			})
 		end,
 	},
@@ -29,7 +29,7 @@ return {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.html.setup({ capabilities = capabilities })
 			lspconfig.marksman.setup({ capabilities = capabilities })
-			lspconfig.pyright.setup({ capabilities = capabilities })
+			lspconfig.ruff_lsp.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
 			lspconfig.cssls.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({
@@ -37,9 +37,6 @@ return {
 					"clangd",
 					"--fallback-style=webkit",
 				},
-			})
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({
 				settings = {
@@ -102,13 +99,8 @@ return {
 							require("efmls-configs.formatters.gofumpt"),
 						},
 						python = {
-							require("efmls-configs.linters.flake8"),
-							require("efmls-configs.formatters.black"),
-							require("efmls-configs.formatters.isort"),
-						},
-						c = {
-							-- require("efmls-configs.linters.cpplint"),
-							-- require("efmls-configs.formatters.clang-format"),
+							require("efmls-configs.linters.ruff"),
+							require("efmls-configs.formatters.ruff"),
 						},
 					},
 				},

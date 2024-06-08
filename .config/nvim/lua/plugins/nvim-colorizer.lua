@@ -3,7 +3,9 @@ return {
 	config = function()
 		require("colorizer").setup({
 			filetypes = { "*" },
-			names = false,
+			user_default_options = {
+				names = false,
+			},
 		})
 	end,
 }

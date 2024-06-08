@@ -71,7 +71,7 @@ alias turn_off_left_mon='xrandr --output DisplayPort-1 --off'
 alias restore_monitors='xrandr --output DisplayPort-2 --mode 1920x1080 --rate 165 --primary --output DisplayPort-1 --mode 1920x1080 --rate 165 --left-of DisplayPort-2'
 alias dotfiles='/usr/bin/git --git-dir="$HOME/Git/dotfiles/" --work-tree="$HOME"'
 # Exports
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH:$HOME/.local/share/nvim/mason/bin
 export GOMODCACHE='/home/welqd/.config/go/pkg/mod'
 export GOPATH='/home/welqd/.config/go'
 export TASKDDATA=/var/lib/taskd 
