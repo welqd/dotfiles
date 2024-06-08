@@ -28,8 +28,8 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 -- vim.opt.wrap = false -- display lines as one long line
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.opt.termguicolors = true
 
 vim.opt.virtualedit = "block"

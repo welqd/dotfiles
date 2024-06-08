@@ -10,12 +10,11 @@ end
 
 -- Fonts
 config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular" })
-config.font_size = 14
+config.font_size = 13
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
 -- Color scheme
-
 config.color_scheme = "gruvbox_material_dark_medium"
 config.color_schemes = {
 	["gruvbox_material_dark_medium"] = {
@@ -36,7 +35,7 @@ config.color_schemes = {
 config.pane_focus_follows_mouse = true
 
 -- Opacity and padding
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.90
 config.window_padding = {
 	top = 15,
 	right = 5,
@@ -124,6 +123,10 @@ config.keys = {
 	{ key = "4", mods = "ALT", action = act.ActivateTab(3) },
 	{ key = "5", mods = "ALT", action = act.ActivateTab(4) },
 	{ key = "6", mods = "ALT", action = act.ActivateTab(5) },
+	{ key = "7", mods = "ALT", action = act.ActivateTab(6) },
+	{ key = "8", mods = "ALT", action = act.ActivateTab(7) },
+	{ key = "9", mods = "ALT", action = act.ActivateTab(8) },
+	{ key = "0", mods = "ALT", action = act.ActivateTab(9) },
 	{ key = "h", mods = "ALT", action = act.ActivateTabRelative(-1) },
 	{ key = "l", mods = "ALT", action = act.ActivateTabRelative(1) },
 	-- Panes
@@ -134,10 +137,10 @@ config.keys = {
 	{ key = "j", mods = "SHIFT|ALT", action = act.ActivatePaneDirection("Down") },
 	{ key = "k", mods = "SHIFT|ALT", action = act.ActivatePaneDirection("Up") },
 	{ key = "l", mods = "SHIFT|ALT", action = act.ActivatePaneDirection("Right") },
-	{ key = "LeftArrow", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Left", 1 }) },
-	{ key = "RightArrow", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Right", 1 }) },
-	{ key = "UpArrow", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Up", 1 }) },
-	{ key = "DownArrow", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Down", 1 }) },
+	{ key = "{", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Left", 1 }) },
+	{ key = "}", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Right", 1 }) },
+	{ key = "_", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Up", 1 }) },
+	{ key = "+", mods = "SHIFT|ALT", action = act.AdjustPaneSize({ "Down", 1 }) },
 	{ key = "o", mods = "SHIFT|ALT", action = act.PaneSelect({ mode = "MoveToNewTab" }) },
 	{ key = "p", mods = "SHIFT|ALT", action = act.PaneSelect({ mode = "SwapWithActiveKeepFocus" }) },
 	-- Clipboard

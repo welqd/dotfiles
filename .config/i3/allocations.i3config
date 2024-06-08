@@ -10,6 +10,8 @@ for_window [class="thunderbird"] move to workspace $ws5
 for_window [class="qBittorrent"] move to workspace $ws5
 # Terminal
 for_window [class="org.wezfurlong.wezterm"] move to workspace $ws6
+# GUI File manager
+for_window [class="Pcmanfm"] move to workspace $ws7
 # Steam
 for_window [class="steam"] move to workspace $ws8
 for_window [class="steam" title="^(?!Steam)"] move to workspace $ws8 floating enable

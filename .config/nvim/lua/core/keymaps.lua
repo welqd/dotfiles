@@ -27,6 +27,8 @@ keymap("n", "<leader>bh", "<CMD>prev<CR>", opts)
 keymap("n", "<leader>ba", ":badd ", opts)
 keymap("n", "Q", "<CMD>bd<CR>", opts)
 keymap("n", "<leader>Q", "<CMD>bd!<CR>", opts)
+-- Splits
+keymap("n", "<leader>s", "<C-w>", opts)
 -- Moving a line in v-mode
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
@@ -47,3 +49,6 @@ end, { expr = true })
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+keymap("n", "<leader>ns", ':%s/class=".\\{-}"//g | %s/id=".\\{-}"//g"<CR>', opts)
+keymap("n", "<leader>nd", ":g/^$/d<CR>", opts)

@@ -32,6 +32,12 @@ return {
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
 			lspconfig.cssls.setup({ capabilities = capabilities })
+			lspconfig.clangd.setup({
+				cmd = {
+					"clangd",
+					"--fallback-style=webkit",
+				},
+			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
 			})
@@ -99,6 +105,10 @@ return {
 							require("efmls-configs.linters.flake8"),
 							require("efmls-configs.formatters.black"),
 							require("efmls-configs.formatters.isort"),
+						},
+						c = {
+							-- require("efmls-configs.linters.cpplint"),
+							-- require("efmls-configs.formatters.clang-format"),
 						},
 					},
 				},
