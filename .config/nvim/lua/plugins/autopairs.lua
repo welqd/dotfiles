@@ -8,9 +8,11 @@ return {
 			check_ts = true,
 			disable_filetype = { "TelescopePrompt", "spectre_panel" },
 		})
-		require("nvim-treesitter.configs").setup({
-			autotag = {
-				enable = true,
+		require("nvim-ts-autotag").setup({
+			opts = {
+				enable_close = true,
+				enable_rename = true,
+				enable_close_on_slash = false,
 			},
 		})
 	end,

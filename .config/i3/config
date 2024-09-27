@@ -20,25 +20,27 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
 set $left_mon DisplayPort-1
 set $right_mon DisplayPort-2
 set $tv HDMI-A-0
 
-workspace 1 output $left_mon
-workspace 2 output $left_mon
-workspace 3 output $left_mon
-workspace 4 output $left_mon
-workspace 5 output $left_mon
+workspace 1 output $right_mon
+workspace 2 output $right_mon
+workspace 3 output $right_mon
+workspace 4 output $right_mon
+workspace 5 output $right_mon
 workspace 6 output $right_mon
 workspace 7 output $right_mon
 workspace 8 output $right_mon
 workspace 9 output $right_mon
 workspace 10 output $right_mon
+workspace 11 output $left_mon
 
-gaps inner 20
+gaps inner 0
 gaps outer 0
 
 smart_gaps off
 
 default_border pixel 2
-default_floating_border pixel 2
+default_floating_border pixel 3

@@ -16,7 +16,17 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "html", "marksman", "ruff_lsp", "bashls", "cssls", "gopls", "clangd" },
+				ensure_installed = {
+					"lua_ls",
+					"html",
+					"marksman",
+					"ruff_lsp",
+					"bashls",
+					"cssls",
+					"gopls",
+					"clangd",
+					"efm",
+				},
 			})
 		end,
 	},
@@ -28,6 +38,7 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.html.setup({ capabilities = capabilities })
+			lspconfig.zls.setup({ capabilities = capabilities })
 			lspconfig.marksman.setup({ capabilities = capabilities })
 			lspconfig.ruff_lsp.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
@@ -68,7 +79,7 @@ return {
 					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-					vim.keymap.set("n", "<leader>gf", function()
+					vim.keymap.set("n", "<leader>gF", function()
 						vim.lsp.buf.format({ async = true })
 					end, opts)
 				end,

@@ -15,9 +15,10 @@ return {
 			return vim.fn.libcall(xkb_switch_lib, "Xkb_Switch_getXkbLayout", "")
 		end
 
+
 		require("lualine").setup({
 			options = {
-				theme = "gruvbox-material",
+				theme = "auto",
 				component_separators = { left = "|", right = "|" },
 			},
 			sections = {

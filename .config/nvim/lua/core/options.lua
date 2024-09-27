@@ -47,6 +47,12 @@ au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=1
 augroup END
 ]])
 
+vim.cmd([[
+    au WinNew * au BufEnter * ++once
+  \ if (&bt ==? 'help' || &ft ==? 'man' || &ft ==? 'fugitive')
+  \ && winwidth(winnr('#')) >= 180 | wincmd L | endif
+]])
+
 -- Filetypes
 vim.filetype.add({
 	-- Detect and assign filetype based on the extension of the filename

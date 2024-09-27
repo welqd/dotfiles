@@ -1,4 +1,3 @@
--- local keymap = require("welqd.plugins.langmapper").keymap
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 -- Leader Space
@@ -25,8 +24,6 @@ keymap("n", "<leader>tL", ":+tabmove<CR>", opts)
 keymap("n", "<leader>bl", "<CMD>bnext<CR>", opts)
 keymap("n", "<leader>bh", "<CMD>prev<CR>", opts)
 keymap("n", "<leader>ba", ":badd ", opts)
-keymap("n", "Q", "<CMD>bd<CR>", opts)
-keymap("n", "<leader>Q", "<CMD>bd!<CR>", opts)
 -- Splits
 keymap("n", "<leader>s", "<C-w>", opts)
 -- Moving a line in v-mode
@@ -39,6 +36,8 @@ keymap({ "n", "v" }, "<leader>y", '"+y', opts)
 keymap("n", "<leader>Y", '"+Y', opts)
 -- Delete without yanking
 keymap({ "n", "v" }, "<leader>d", '"_d', opts)
+-- X without yanking
+keymap({ "n", "v" }, "x", '"_x', opts)
 -- Do not yank empty line
 vim.keymap.set("n", "dd", function()
 	if vim.api.nvim_get_current_line():find("^%s*$") then
@@ -49,6 +48,3 @@ end, { expr = true })
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
-keymap("n", "<leader>ns", ':%s/class=".\\{-}"//g | %s/id=".\\{-}"//g"<CR>', opts)
-keymap("n", "<leader>nd", ":g/^$/d<CR>", opts)

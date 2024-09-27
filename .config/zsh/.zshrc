@@ -10,7 +10,6 @@ fi
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-autosuggestions"
 plug "romkatv/powerlevel10k"
-plug "jeffreytse/zsh-vi-mode"
 
 
 # Title
@@ -78,6 +77,8 @@ export TASKDDATA=/var/lib/taskd
 export TERM='xterm-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"

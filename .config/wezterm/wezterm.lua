@@ -10,24 +10,37 @@ end
 
 -- Fonts
 config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular" })
-config.font_size = 13
+config.font_size = 12
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
 -- Color scheme
+local gb_bg_dim = "#141617"
+local gb_bg = "#1d2021"
+local gb_bg3 = "#3c3836"
+local gb_fg = "#d4be98"
+local gb_red = "#ea6962"
+local gb_green = "#a9b665"
+local gb_blue = "#7daea3"
+local gb_yellow = "#d8a657"
+local gb_purple = "#d3869b"
+local gb_aqua = "#89b482"
+-- local gb_current_word = "#3c3836"
+local gb_grey0 = "#7c6f64"
+
 config.color_scheme = "gruvbox_material_dark_medium"
 config.color_schemes = {
 	["gruvbox_material_dark_medium"] = {
-		foreground = "#D4BE98",
-		background = "#282828",
-		cursor_bg = "#D4BE98",
-		cursor_border = "#D4BE98",
-		cursor_fg = "#282828",
-		selection_bg = "#D4BE98",
-		selection_fg = "#45403D",
+		foreground = gb_fg,
+		background = gb_bg,
+		cursor_bg = gb_fg,
+		cursor_border = gb_fg,
+		cursor_fg = gb_bg,
+		selection_bg = gb_fg,
+		selection_fg = gb_bg3,
 
-		ansi = { "#282828", "#EA6962", "#A9B665", "#D8A657", "#7DAEA3", "#D3869B", "#89B482", "#D4BE98" },
-		brights = { "#45403D", "#EA6962", "#A9B665", "#D8A657", "#7DAEA3", "#D3869B", "#89B482", "#D4BE98" },
+		ansi = { gb_bg, gb_red, gb_green, gb_yellow, gb_blue, gb_purple, gb_aqua, gb_fg },
+		brights = { gb_bg3, gb_red, gb_green, gb_yellow, gb_blue, gb_purple, gb_aqua, gb_fg },
 	},
 }
 
@@ -35,7 +48,7 @@ config.color_schemes = {
 config.pane_focus_follows_mouse = true
 
 -- Opacity and padding
-config.window_background_opacity = 0.90
+-- config.window_background_opacity = 0.90
 config.window_padding = {
 	top = 15,
 	right = 5,
@@ -60,20 +73,6 @@ config.inactive_pane_hsb = {
 	brightness = 0.75,
 }
 
--- Color variables
--- local frappe_mauve = "#ca9ee6"
--- local frappe_base = "#303446"
--- local frappe_overlay0 = "#737994"
--- local frappe_surface1 = "#51576d"
--- local frappe_text = "#c6d0f5"
--- local frappe_base_a = "rgb(48, 52, 70, 0.95)"
--- local frappe_mantle_a = "rgb(41, 44, 60, 0.95)"
-local gb_bg = "#282828"
-local gb_bg2 = "#222222"
-local gb_fg = "#d4be98"
-local gb_blue = "#7daea3"
-local gb_black = "#3c3836"
-local gb_grey0 = "#7c6f64"
 -- Colors
 config.colors = {
 	split = gb_blue,
@@ -84,19 +83,19 @@ config.colors = {
 	tab_bar = {
 		-- Remove if fancy is true
 		-- background = frappe_mantle_a,
-		background = gb_bg2,
+		background = gb_bg_dim,
 		active_tab = {
-			bg_color = gb_black,
+			bg_color = gb_bg,
 			fg_color = gb_fg,
 			intensity = "Bold",
 		},
 		inactive_tab = {
-			bg_color = gb_bg2,
+			bg_color = gb_bg_dim,
 			fg_color = gb_grey0,
 			intensity = "Bold",
 		},
 		inactive_tab_hover = {
-			bg_color = gb_bg2,
+			bg_color = gb_bg_dim,
 			fg_color = gb_grey0,
 			intensity = "Bold",
 			italic = true,
@@ -107,6 +106,7 @@ config.colors = {
 }
 -- End of tab settings
 
+config.default_cursor_style = 'SteadyBar'
 --
 -- Disable all keybindings
 config.disable_default_key_bindings = true
