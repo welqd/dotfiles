@@ -4,12 +4,14 @@ include ~/.config/i3/startups.i3config
 include ~/.config/i3/allocations.i3config
 
 font pango:FiraCode Nerd Font Mono 11
-set $mod Mod4
 
+# Modifier
+set $mod Mod4
 floating_modifier $mod
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
+# Workspaces
 set $ws1 "1"
 set $ws2 "2" 
 set $ws3 "3"
@@ -37,10 +39,11 @@ workspace 9 output $right_mon
 workspace 10 output $right_mon
 workspace 11 output $left_mon
 
-gaps inner 0
-gaps outer 0
-
+# Gaps
+gaps inner 2
+gaps outer 2
 smart_gaps off
 
+# Borders
 default_border pixel 2
 default_floating_border pixel 3

@@ -1,6 +1,6 @@
 return {
-  "ivanesmantovich/xkbswitch.nvim",
+  'ivanesmantovich/xkbswitch.nvim',
   config = function()
     require('xkbswitch').setup()
-  end
+  end,
 }

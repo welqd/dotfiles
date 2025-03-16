@@ -7,9 +7,7 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym $mod+Return exec "wezterm"
-bindsym $mod+Shift+Return exec "alacritty"
-bindsym $mod+Shift+backslash exec "alacritty --class=float_term"
+bindsym $mod+Return exec "kitty"
 
 bindsym $mod+Shift+q kill
 
