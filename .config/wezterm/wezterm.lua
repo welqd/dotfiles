@@ -9,8 +9,8 @@ if wezterm.config_builder then
 end
 
 -- Fonts
-config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular" })
-config.font_size = 12
+config.font = wezterm.font("Hack Nerd Font Mono", { weight = "Regular" })
+config.font_size = 14
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
@@ -106,7 +106,7 @@ config.colors = {
 }
 -- End of tab settings
 
-config.default_cursor_style = 'SteadyBar'
+config.default_cursor_style = "SteadyBar"
 --
 -- Disable all keybindings
 config.disable_default_key_bindings = true
@@ -148,8 +148,10 @@ config.keys = {
 	{ key = "c", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
 	-- Scrolling
 	{ key = "UpArrow", mods = "SHIFT", action = act.ScrollByLine(-1) },
+	{ key = "p", mods = "CTRL|SHIFT", action = act.ScrollByLine(-1) },
 	{ key = "k", mods = "CTRL|ALT", action = act.ScrollByLine(-1) },
 	{ key = "DownArrow", mods = "SHIFT", action = act.ScrollByLine(1) },
+	{ key = "n", mods = "CTRL|SHIFT", action = act.ScrollByLine(1) },
 	{ key = "j", mods = "CTRL|ALT", action = act.ScrollByLine(1) },
 	-- Copy mode
 	{ key = "Space", mods = "SHIFT|ALT", action = act.ActivateCopyMode },
